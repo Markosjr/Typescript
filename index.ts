@@ -32,10 +32,28 @@ const mycombi = new Combi ();
 WashCar<Combi>(mycombi) */
 
 
+
+/*
 function Person<T,N>(name:T,age:N):T{
     return name;
 
 }
 
 const rPerson = Person<string,number>('Marcos',23);
-console.log(rPerson)
+console.log(rPerson) */
+
+function log(data:any){
+    return (target:any) =>{
+        console.log(data);
+        console.log(target);
+    }
+}
+
+@log("Hello !")
+@log('Hello 22!')
+class qualquer{}
+
+@log('Olá')
+class teste{}
+
+
