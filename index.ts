@@ -42,6 +42,7 @@ function Person<T,N>(name:T,age:N):T{
 const rPerson = Person<string,number>('Marcos',23);
 console.log(rPerson) */
 
+/*
 function log(data:any){
     return (target:any) =>{
         console.log(data);
@@ -54,6 +55,24 @@ function log(data:any){
 class qualquer{}
 
 @log('Olá')
-class teste{}
+class teste{} */
 
+interface Config {
+    config:string
+}
 
+@logClassWithArgs ({config:'1'})
+class Person{
+    constructor(public name:string){}
+}
+
+function logClassWithArgs(filter:Config){
+    return(target:object)=>{
+        console.log(target)
+        console.log(filter)
+
+    if(filter.config ==='1'){
+        console.log('config is 1');
+    }
+    }
+}
