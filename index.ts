@@ -57,6 +57,8 @@ class qualquer{}
 @log('Olá')
 class teste{} */
 
+
+/*
 interface Config {
     config:string
 }
@@ -73,6 +75,21 @@ function logClassWithArgs(filter:Config){
 
     if(filter.config ==='1'){
         console.log('config is 1');
+     }
     }
-    }
+} */
+
+
+let x = 10, y=5;
+
+switch (x-y) {
+    case 0:
+        console.log("Result:0");
+        break;
+    case 5:
+        console.log("Result:5");
+        break;
+    case 10:
+        console.log("Result:10");
+        break;
 }
