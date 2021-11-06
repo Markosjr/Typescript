@@ -79,7 +79,7 @@ function logClassWithArgs(filter:Config){
     }
 } */
 
-
+/* =====================
 let x = 10, y=5;
 
 switch (x-y) {
@@ -92,4 +92,17 @@ switch (x-y) {
     case 10:
         console.log("Result:10");
         break;
+} */ 
+
+function numberStringSwap(value:number|string,radix:number = 10):string|number {
+    if(typeof value ==='number'){
+    return value
 }
+
+return parseInt(value,radix).toString(radix);
+}
+
+const num = <number> numberStringSwap('10');
+const str = <string> numberStringSwap(10);
+console.log(num)
+console.log(str)
