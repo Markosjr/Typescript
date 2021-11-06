@@ -1,3 +1,5 @@
+/*
+
 class Car {
     label:string = 'Generic Car'
     numWheels: number = 5
@@ -27,4 +29,13 @@ const mySUV = new SUV ();
 WashCar <SUV>(mySUV)
 
 const mycombi = new Combi ();
-WashCar<Combi>(mycombi)
+WashCar<Combi>(mycombi) */
+
+
+function Person<T,N>(name:T,age:N):T{
+    return name;
+
+}
+
+const rPerson = Person<string,number>('Marcos',23);
+console.log(rPerson)
