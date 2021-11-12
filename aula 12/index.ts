@@ -1,8 +1,25 @@
-import axios from 'axios';
+type ContaBancaria ={
+    saldo:number,
+    depositar:(valor:number) => void
+    saque:(valor:number) => void
+}
 
- async function getPokemon() {
- const ret = await axios.get("https://pokeapi.co/api/v2/pokemon/1/");
- console.log(ret);
- }
+type Correntista ={
+    nome:string,
+    contaBancaria:ContaBancaria,
+}
 
- getPokemon()
+let contaBancaria:ContaBancaria ={
+    saldo:5000,
+    depositar(valor:number){
+        this.saldo += valor
+    },
+    saque(valor:number){
+        this.saldo -= valor
+    }
+}
+
+let correntista:Correntista ={
+    nome:'Marcos',
+    contaBancaria:contaBancaria,
+}
