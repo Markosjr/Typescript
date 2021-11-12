@@ -23,3 +23,8 @@ let correntista:Correntista ={
     nome:'Marcos',
     contaBancaria:contaBancaria,
 }
+
+correntista.contaBancaria.depositar(3000)
+console.log(correntista)
+correntista.contaBancaria.saque(2000)
+console.log(correntista)
