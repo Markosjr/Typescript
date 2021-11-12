@@ -34,3 +34,8 @@ console.log(correntista) */
 
 
 
+import { ZipCodeValidator  } from "./zipValidator";
+
+let myValidator = new ZipCodeValidator ();
+const ret = myValidator.isAcceptable('12349');
+console.log(ret)
