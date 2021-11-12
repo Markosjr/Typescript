@@ -1,4 +1,4 @@
-type ContaBancaria ={
+/*type ContaBancaria ={
     saldo:number,
     depositar:(valor:number) => void
     saque:(valor:number) => void
@@ -30,4 +30,7 @@ let correntista:Correntista ={
 correntista.contaBancaria.depositar(3000)
 console.log(correntista)
 correntista.contaBancaria.saque(2000)
-console.log(correntista)
+console.log(correntista) */
+
+
+
