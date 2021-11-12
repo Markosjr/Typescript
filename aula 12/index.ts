@@ -10,11 +10,14 @@ type Correntista ={
 }
 
 let contaBancaria:ContaBancaria ={
-    saldo:5000,
+    saldo:-5000,
     depositar(valor:number){
+       if (this.saldo <0) return console.log('Valor inválido')
         this.saldo += valor
-    },
+    }, 
     saque(valor:number){
+        let calc = this.saldo - valor
+        if (calc <0) return console.log('Saldo insuficiente')
         this.saldo -= valor
     }
 }
