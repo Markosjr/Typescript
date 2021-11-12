@@ -1,0 +1,298 @@
+let list: number [] = [1,2,3];
+console.log(list)
+
+let alunos:Array<string> = ["Marcos,Eduardo, João"];
+console.log(alunos)
+
+let booleano:Array<boolean> = [true,false];
+console.log(booleano)
+
+enum Color {Red = 1, Green, Blue}
+let colorName: string = Color[2]
+console.log(colorName)
+
+
+let notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false;
+
+console.log(notSure)
+
+
+
+function warnUser(): void {
+    console.log ("This is my warning message");
+}
+
+
+
+var a: void = undefined;
+var b: void = null;
+
+warnUser();
+
+
+
+function error(message: string): never {
+    throw new Error(message);
+}
+
+function fail (message: string) :never {
+    return error (message);
+}
+
+fail ('Mensagem de Falha')
+
+
+let someValue: any = "this is a string";
+
+let strlenght: number = (someValue as string).length;
+console.log(strlenght)
+
+
+interface CarConfig{
+    color:string
+    width:number
+    height?:number
+}
+
+const myCar:CarConfig = {
+    color:'red',
+    width:100
+}
+
+console.log(myCar)
+
+
+=============================================
+
+
+ALTITUDE E LONGITUDE:
+
+
+
+interface MapConfig{
+    lat:number;
+    long:number;
+    size: 8|16|32
+}
+
+const map = <MapConfig>{
+    lat: -73.8745643345,
+    long: 16.34215342,
+    size:8
+}
+
+console.log(map)
+const map2:MapConfig = {
+    lat: -73.8745643345,
+    long: 16.34215342,
+    size:8
+}
+
+==========================================
+
+interface ClockInterface{
+    currentTime:Date;
+}
+
+class Clock implements ClockInterface{
+    currentTime:Date = new Date();
+    constructor(h:number,m:number){
+        console.log(h,m,this.currentTime)
+    }
+    other(){}
+}
+
+const time = new Clock(3,4);
+console.log(time)
+
+==================================================
+
+
+const sum = (x:number,y:number):number => {
+    return x + y;
+}
+
+console.log(sum(1,2));
+
+==============================================
+
+
+ enum Role {
+     admin = 'admin',
+     client = 'client',
+ }
+
+ interface User {
+     name:string;
+     age:number;
+     occupation?:string;
+     role:Role;
+ }
+
+ const persons:User[] = [
+ {
+    name:'John',
+    age:30,
+    occupation:'developer',
+    role: Role.admin,
+
+ },
+ {
+    name:'maria',
+    age:28,
+    occupation:'analyst',
+    role: Role.admin,
+ },
+ {
+    name:'mc lov',
+    age:21,
+    occupation:'clerk',
+    role: Role.admin,
+ },
+]
+
+
+ persons.map(el=> {
+     console.log(el)
+ })
+
+============================================
+
+
+interface Search{
+(source:string,val:string):boolean;
+}
+let search:Search;
+search = function(src:string,val:string):boolean{
+    let result = src.search(val);
+    return result > -1;
+}
+
+const res = search('hello world', 'world');
+console.log(res)
+
+==============================================
+
+const item ={
+    named:'Notebook',
+    price:4000,
+}
+
+const {named,price} = item;
+
+console.log(named)
+console.log(price)
+
+const car = ['BMW',2021,true]
+const[brand,year]=car
+console.log(brand)
+console.log(year)
+
+====================================
+
+const z = 100
+
+function addZ(x:number,y:number):number {
+    return x + y +z
+}
+
+console.log(addZ(1,2))
+
+====================================
+
+
+class Car {
+    private currentSpeed:number = 0;
+
+    constructor(
+        public brand:string,
+        public model:string,
+        private maxSpeed:number =200
+
+    ){}
+
+
+protected changeSpeed(newSpeed:number):number{
+    const speed = this.currentSpeed + newSpeed;
+    if(speed >=0 && speed <= this.maxSpeed){
+    this.currentSpeed = speed;
+}else{
+    this.currentSpeed = newSpeed > 0?this.maxSpeed:0;
+}
+return this.currentSpeed
+}
+
+public accelerate():number{
+    return this.changeSpeed(50);
+}
+
+public brake():number{
+    return this.changeSpeed(-50);
+}
+}
+
+
+const myCar = new Car('Ford', 'Focus',100);
+myCar.accelerate();
+myCar.accelerate();
+myCar.accelerate();
+myCar.accelerate();
+myCar.accelerate();
+myCar.accelerate()
+console.log(myCar)
+myCar.brake();
+console.log(myCar)
+
+====================================================
+
+abstract class Calculate {
+    protected resultado: number = 0
+
+    abstract execteCalc(...numbers:number[]):void
+
+    getResultado():number {
+        return this.resultado
+    }
+}
+
+class Sum extends Calculate {
+    execteCalc(...numbers:number[]):void {
+        this.resultado = numbers.reduce((v1,v2)=>v1+v2)
+    }
+}
+
+const c:Calculate = new Sum ()
+const result = c.execteCalc(2,9,4)
+console.log(c.getResultado())
+
+=================================================
+
+
+function identity <T>(value:T) : T {
+    return value;
+}
+
+console.log(identity<Number>(1))
+
+================================================
+GENERICS
+
+function identity <T,U>(value:T, message: U) : T {
+    console.log(message)
+    return value
+}
+
+identity<Number, string>(42, "Identity");
+
+
+================================================
+
+
+
+
+
+
+
+
