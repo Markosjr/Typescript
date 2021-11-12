@@ -4,7 +4,7 @@ export function show(user:string):string {
 } 
 
 
-export function sum(val:summaryinterface):number {
-    return n1 + n2
-}
+/*export function sum(val:summaryinterface):number {
+    return;
+}*/
 
