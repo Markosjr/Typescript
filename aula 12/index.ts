@@ -34,6 +34,8 @@ console.log(correntista) */
 
 
 
+
+
 /*import { ZipCodeValidator  } from "./zipValidator";
 
 let myValidator = new ZipCodeValidator ();
@@ -58,7 +60,8 @@ if(request.status === AprovalStatus.approved) {
 } */
 
 
-interface Todo {
+
+/*interface Todo {
     title:string;
     description:string;
     completed:boolean;
@@ -79,4 +82,18 @@ const todo2:Todo = {
     createdAt:new Date(),
 }
 
-console.log(todo);
+console.log(todo);*/
+
+
+
+
+interface R {
+    id:number;
+    name: string
+}
+
+function show(args: Readonly<R>){
+console.log(args)
+}
+
+show({id:1, name: 'ddd'})
