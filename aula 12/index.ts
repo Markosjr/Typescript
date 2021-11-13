@@ -40,7 +40,7 @@ let myValidator = new ZipCodeValidator ();
 const ret = myValidator.isAcceptable('12349');
 console.log(ret)*/
 
-enum AprovalStatus {
+/*enum AprovalStatus {
     draft,
     submitted,
     approved,
@@ -55,4 +55,21 @@ const request ={
 
 if(request.status === AprovalStatus.approved) {
     console.log('The request is approved')
+} */
+
+
+interface Todo {
+    title:string;
+    description:string;
+    completed:boolean;
+    createdAt:Date;
 }
+
+type TodoPreview = Omit<Todo, 'description' | 'createdAt'>;
+
+const todo:TodoPreview = {
+    title:'Texto',
+    completed:false,
+}
+
+console.log(todo);
