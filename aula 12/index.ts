@@ -34,8 +34,25 @@ console.log(correntista) */
 
 
 
-import { ZipCodeValidator  } from "./zipValidator";
+/*import { ZipCodeValidator  } from "./zipValidator";
 
 let myValidator = new ZipCodeValidator ();
 const ret = myValidator.isAcceptable('12349');
-console.log(ret)
+console.log(ret)*/
+
+enum AprovalStatus {
+    draft,
+    submitted,
+    approved,
+    rejected
+}
+
+const request ={
+    id:1,
+    status: AprovalStatus.approved,
+    description:'text'
+}
+
+if(request.status === AprovalStatus.approved) {
+    console.log('The request is approved')
+}
