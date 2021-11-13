@@ -72,4 +72,11 @@ const todo:TodoPreview = {
     completed:false,
 }
 
+const todo2:Todo = {
+    title: 'Texto',
+    description:'Descrição',
+    completed:false,
+    createdAt:new Date(),
+}
+
 console.log(todo);
